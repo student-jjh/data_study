@@ -24,7 +24,9 @@ print(corr)
 corr.to_csv('corr.csv')
 '''
 model=smf.ols(formula='jobSatisfaction~English',data=df)
+model2=smf.ols(formula='jobSatisfaction~English+stress+income',data=df)
 
 result=model.fit()
-
-print(result.summary())
+result2=model2.fit()
+#print(result.summary())
+print(result2.summary())
